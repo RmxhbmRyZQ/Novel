@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        android:id="@+id/frameLayout"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activity.TextActivity">
+
+    <FrameLayout
+            android:id="@+id/novel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <RelativeLayout
+                android:id="@+id/viewPage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+        </RelativeLayout>
+    </FrameLayout>
+
+    <FrameLayout
+            android:id="@+id/popup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+    </FrameLayout>
+</FrameLayout>

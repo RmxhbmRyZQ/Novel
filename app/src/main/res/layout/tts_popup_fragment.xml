@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EE222222"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+
+    <TextView
+            android:textAlignment="textEnd"
+            android:id="@+id/supporter"
+            android:textColor="#AAFFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textSize="10sp"/>
+
+    <LinearLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#AAFFFFFF"
+                android:textSize="15sp"
+                android:text="速度："/>
+
+        <SeekBar
+                android:id="@+id/speed"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:max="15"
+                android:maxHeight="2dp"
+                android:progressDrawable="@drawable/seekbar_background"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#AAFFFFFF"
+                android:textSize="15sp"
+                android:text="音调："/>
+
+        <SeekBar
+                android:id="@+id/tone"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:max="15"
+                android:maxHeight="2dp"
+                android:progressDrawable="@drawable/seekbar_background"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+            android:layout_margin="5dp"
+            android:id="@+id/voice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <View
+            android:layout_margin="5dp"
+            android:background="#AAFFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+
+    <ImageView
+            android:id="@+id/exit"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+</LinearLayout>

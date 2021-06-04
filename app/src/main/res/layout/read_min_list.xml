@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:id="@+id/item"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="?android:attr/selectableItemBackground"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <ImageView
+                android:id="@+id/image"
+                android:layout_width="68dp"
+                android:layout_height="match_parent"
+                android:maxHeight="100dp"
+                android:layout_marginRight="10dp"
+                android:scaleType="fitXY"/>
+
+        <FrameLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+            <flandre.cn.novel.ui.view.MultiPaintTextView
+                    android:id="@+id/top_intro"
+                    android:paddingBottom="6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                    android:gravity="center"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <flandre.cn.novel.ui.view.CircularProgressView
+                        android:id="@+id/progress"
+                        app:backWidth="3dp"
+                        app:progWidth="3dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30sp"/>
+
+                <TextView
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/percent"
+                        android:textSize="10sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

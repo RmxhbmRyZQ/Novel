@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="flandre.cn.novel">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+
+    <application
+            android:allowBackup="true"
+            android:icon="@mipmap/main"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/HasActionBar"
+            android:usesCleartextTraffic="true"
+            android:requestLegacyExternalStorage="true"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true">
+
+        <receiver android:name=".service.PlayMusicService$MediaButtonReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+        </receiver>
+
+        <provider
+                android:name="android.support.v4.content.FileProvider"
+                android:authorities="flandre.cn.novel.fileProvider"
+                android:exported="false"
+                android:grantUriPermissions="true">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/provider_paths"/>
+        </provider>
+
+        <activity
+                android:name=".ui.activity.MainActivity"
+                android:theme="@style/MainTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".ui.activity.IndexActivity"
+                android:theme="@style/AppTheme">
+                <!--android:launchMode="singleTask">-->
+        </activity>
+        <activity android:name=".ui.activity.SearchActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".ui.activity.IndexActivity"/>
+        </activity>
+        <activity
+                android:name=".ui.activity.NovelDetailActivity"
+                android:label="书籍详细">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".ui.activity.SearchActivity"/>
+        </activity>
+        <activity
+                android:name=".ui.activity.TextActivity"
+                android:theme="@style/AppTheme"
+                android:launchMode="singleTop">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".ui.activity.IndexActivity"/>
+        </activity>
+        <activity
+                android:name=".ui.activity.ConfigureThemeActivity"
+                android:label="设置">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".ui.activity.IndexActivity"/>
+        </activity>
+        <activity android:name=".ui.activity.ConfigureSourceActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".ui.activity.IndexActivity"/>
+        </activity>
+        <activity android:name=".ui.activity.ReadTimeActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".ui.activity.IndexActivity"/>
+        </activity>
+        <activity android:name=".ui.activity.BookManageActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".ui.activity.IndexActivity"/>
+        </activity>
+
+        <service
+                android:name=".service.NovelService"
+                android:permission="android.permission.INTERNET">
+        </service>
+        <service
+                android:name=".service.PlayMusicService"
+                android:process=":music"
+                >
+        </service>
+
+        <activity android:name=".ui.activity.DownloadManagerActivity">
+        </activity>
+        <activity
+                android:name=".ui.activity.LocalMusicActivity"
+                android:parentActivityName=".ui.activity.IndexActivity"
+                android:launchMode="singleTop">
+            <!--android:launchMode="singleTask">-->
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".ui.activity.IndexActivity"/>
+        </activity>
+    </application>
+
+</manifest>

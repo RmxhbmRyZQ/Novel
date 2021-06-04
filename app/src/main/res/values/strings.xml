@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">浮荷露声</string>
+    <string name="search">搜索</string>
+    <string name="setting">设置</string>
+    <string name="empty">空空如也</string>
+    <string name="noSearch">找不到小说</string>
+    <string name="error">网络出现了异常</string>
+    <string name="star">收藏</string>
+    <string name="cancel">取消</string>
+    <string name="change">换源</string>
+    <string name="read">阅读</string>
+    <string name="ctn">继续</string>
+    <string name="list">目录</string>
+    <string name="searching">搜索中…</string>
+
+    <string name="toUpdate">下拉更新</string>
+    <string name="update">放手更新</string>
+    <string name="updating">更新中</string>
+    <string name="updated">更新完成</string>
+
+    <string name="day">白天</string>
+    <string name="night">夜间</string>
+</resources>

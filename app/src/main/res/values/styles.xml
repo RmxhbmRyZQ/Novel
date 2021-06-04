@@ -1,0 +1,105 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="HasActionBar" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/red</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--<style name="MainTheme" parent="android:Theme.Holo.Light.NoActionBar">-->
+    <style name="MainTheme" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowBackground">@mipmap/loading</item>
+    </style>
+
+    <style name="ActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <!-- 定义浮动的 ActionBar-->
+        <item name="windowActionBarOverlay">true</item>
+        <item name="actionBarStyle">@style/blurActionbarStyle</item>
+        <!-- 去除阴影-->
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="blurActionbarStyle" parent="Widget.AppCompat.Light.ActionBar.Solid">
+        <!--ActionBar的背景色设为透明-->
+        <item name="background">@color/actionBar</item>
+    </style>
+
+    <style name="IndexTheme" parent="ActionBar">
+        <item name="actionBarStyle">@style/blueActionbarStyle</item>
+    </style>
+
+    <style name="blueActionbarStyle" parent="Widget.AppCompat.Light.ActionBar.Solid">
+        <!--ActionBar的背景色设为透明-->
+        <item name="background">@color/red</item>
+    </style>
+
+    <style name="DialogTheme" parent="@style/AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <!--窗体是否浮动-->
+        <item name="android:windowIsFloating">true</item>
+        <!--去掉标题-->
+        <item name="android:windowNoTitle">true</item>
+        <!--背景是否昏暗-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--昏暗数量-->
+        <item name="android:backgroundDimAmount">0.6</item>
+        <!--窗体背景透明-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--点击空白处退出-->
+        <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
+
+    <style name="LoadDialog" parent="@style/DialogTheme">
+        <!-- 是否有边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!--阴影  -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--透明背景-->
+        <item name="android:background">@android:color/transparent</item>
+        <!--弹窗背景是否变暗-->
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="CustomDatePickerDialog" parent="@style/DialogTheme">
+        <!--进入退出动画-->
+        <item name="android:windowAnimationStyle">@style/dialog_fragment_animation</item>
+    </style>
+
+    <style name="AlarmDialog" parent="@style/DialogTheme">
+        <item name="android:windowAnimationStyle">@style/dialog_anim_fade_out</item>
+    </style>
+
+    <style name="AlarmTriggerDialog" parent="@style/DialogTheme">
+        <item name="android:windowAnimationStyle">@style/dialog_anim_fade_out</item>
+        <!--点击空白处退出-->
+        <item name="android:windowCloseOnTouchOutside">false</item>
+    </style>
+
+    <style name="dialog_fragment_animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_show</item>
+        <item name="android:windowExitAnimation">@anim/dialog_hide</item>
+    </style>
+
+    <style name="dialog_anim_fade_out" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_fade_out</item>
+    </style>
+
+    <style name="dialog_anim_slide_out">
+        <item name="android:windowEnterAnimation">@anim/dialog_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_slide_top</item>
+    </style>
+</resources>

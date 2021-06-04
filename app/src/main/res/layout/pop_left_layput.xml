@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+            android:background="@drawable/novel_top_day"
+            android:id="@+id/novel_img"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"/>
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/novel_rec"
+            android:layout_below="@id/novel_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

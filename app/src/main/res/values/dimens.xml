@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="top">16dp</dimen>
+    <dimen name="bottom">16dp</dimen>
+    <dimen name="textSize">16sp</dimen>
+    <dimen name="padding">3dp</dimen>
+    <dimen name="dialogTextSize">18sp</dimen>
+    <dimen name="dialogPadding">15dp</dimen>
+    <dimen name="pop_image_height">30dp</dimen>
+    <dimen name="pop_image_width">30dp</dimen>
+    <dimen name="pop_text_size">16sp</dimen>
+    <dimen name="download_text_size">20sp</dimen>
+    <dimen name="download_padding">10dp</dimen>
+</resources>

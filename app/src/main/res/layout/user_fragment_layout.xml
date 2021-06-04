@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <FrameLayout
+                android:id="@+id/image_wrap"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_gravity="center">
+
+            <ImageView
+                    android:layout_gravity="center"
+                    android:layout_marginTop="40dp"
+                    android:id="@+id/image"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="30dp"
+                    />
+
+            <flandre.cn.novel.ui.view.CircleArcView
+                    android:id="@+id/circle"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center"
+                    app:thick="2.5dp"
+                    app:color="#ffff0000"
+                    app:angle="0"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginBottom="25dp"
+                    />
+        </FrameLayout>
+
+        <LinearLayout
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:layout_below="@id/image_wrap"
+                android:id="@+id/introduce"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:id="@+id/todayIntro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:text="今日时长"/>
+
+                <TextView
+                        android:id="@+id/todayRead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:id="@+id/alarmIntro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:text="闹钟剩余"/>
+
+                <TextView
+                        android:gravity="center"
+                        android:id="@+id/alarmRest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+                android:layout_below="@id/introduce"
+                android:id="@+id/sep"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+        <android.support.v7.widget.RecyclerView
+                android:layout_below="@id/sep"
+                android:id="@+id/bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <!--<TextView-->
+                <!--android:id="@+id/angle"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:textSize="20sp"-->
+                <!--android:background="#00000000"/>-->
+        <TextView
+                android:layout_below="@id/bottom"
+                android:id="@+id/angle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:background="#00000000"/>
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

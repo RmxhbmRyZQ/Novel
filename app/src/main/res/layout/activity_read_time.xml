@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+        android:id="@+id/scroll"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activity.ReadTimeActivity">
+
+    <RelativeLayout
+            android:id="@+id/total"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <ImageView
+                android:id="@+id/read_top"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:background="@drawable/read_ex_night"/>
+
+        <LinearLayout
+                android:id="@+id/image_bottom"
+                android:layout_below="@id/read_top"
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                <TextView
+                        android:id="@+id/read_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="阅读时长"
+                        android:textSize="@dimen/dialogTextSize"/>
+
+                <TextView
+                        android:id="@+id/read_time_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="10dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                <TextView
+                        android:id="@+id/read_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="阅读数量"
+                        android:textSize="@dimen/dialogTextSize"/>
+
+                <TextView
+                        android:id="@+id/read_count_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="10dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                <TextView
+                        android:id="@+id/read_finish"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="阅读完成"
+                        android:textSize="@dimen/dialogTextSize"/>
+
+                <TextView
+                        android:id="@+id/read_finish_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="10dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+                android:id="@+id/sep"
+                android:layout_below="@id/image_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+        <android.support.v7.widget.RecyclerView
+                android:layout_below="@id/sep"
+                android:id="@+id/introduce"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <ImageView
+                android:layout_marginTop="80dp"
+                android:id="@+id/loading"
+                android:layout_below="@id/sep"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+                <!--android:src="@drawable/loading_day"/>-->
+    </RelativeLayout>
+
+</android.support.v4.widget.NestedScrollView>

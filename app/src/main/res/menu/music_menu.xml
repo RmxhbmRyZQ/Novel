@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+            android:id="@+id/search"
+            android:title="@string/search"
+            app:showAsAction="always"
+            app:actionViewClass="android.support.v7.widget.SearchView"/>
+
+    <!--<item-->
+        <!--android:id="@+id/more"-->
+            <!--android:title="更多"-->
+            <!--app:showAsAction="always"/>-->
+
+    <item
+            android:id="@+id/alarm"
+            android:title="定时关闭"
+            android:icon="@drawable/alarm2"
+            app:showAsAction="never"/>
+
+    <item
+            android:id="@+id/list"
+            android:title="播放列表"
+            android:icon="@drawable/list"
+            app:showAsAction="never"/>
+
+    <item
+            android:id="@+id/songName"
+            app:showAsAction="never"
+            android:title="歌名排序"
+            android:icon="@drawable/turn"/>
+
+    <item
+            android:id="@+id/singerName"
+            app:showAsAction="never"
+            android:title="歌手排序"
+            android:icon="@drawable/turn"/>
+
+</menu>

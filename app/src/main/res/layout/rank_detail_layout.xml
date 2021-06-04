@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        android:id="@+id/base"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/fresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/data"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+            </android.support.v7.widget.RecyclerView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+
+
+        <LinearLayout
+                android:id="@+id/load_wrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+            <ImageView
+                    android:id="@+id/load_img"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/loading"/>
+
+            <TextView
+                    android:id="@+id/load_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:layout_gravity="center"
+                    android:text="加载中"
+                    android:textSize="40sp"/>
+        </LinearLayout>
+
+        <TextView
+                android:visibility="gone"
+                android:id="@+id/io_error"
+                android:text="网络错误"
+                android:textSize="40sp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+</FrameLayout>

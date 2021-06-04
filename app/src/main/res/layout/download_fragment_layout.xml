@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:padding="20dp"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <TextView
+            android:id="@+id/title"
+            android:paddingTop="@dimen/download_padding"
+            android:paddingBottom="@dimen/download_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/download_text_size"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="缓存章数"/>
+
+    <View
+            android:id="@+id/sep"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000"/>
+
+    <TextView
+            android:id="@+id/twenty"
+            android:paddingTop="@dimen/download_padding"
+            android:paddingBottom="@dimen/download_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/download_text_size"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="后面二十章"/>
+
+    <TextView
+            android:id="@+id/fifty"
+            android:paddingTop="@dimen/download_padding"
+            android:paddingBottom="@dimen/download_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/download_text_size"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="后面五十章"/>
+
+    <TextView
+            android:id="@+id/total"
+            android:paddingTop="@dimen/download_padding"
+            android:paddingBottom="@dimen/download_padding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/download_text_size"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="后面全部"/>
+
+</LinearLayout>

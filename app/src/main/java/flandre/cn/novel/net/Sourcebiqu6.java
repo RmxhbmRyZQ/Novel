@@ -42,7 +42,7 @@ public class Sourcebiqu6 extends BaseResolve {
     public void searchData(Document doc, NovelInfo novelInfo) throws ParseException {
         String imgUrl = doc.select("#fmimg > img").attr("src");
         novelInfo.setName(doc.select("#info > h1").get(0).text());
-        novelInfo.setAuthor(doc.select("#info > p").get(0).text().substring(5));
+        novelInfo.setAuthor(doc.select("#info > p").get(0).text().substring(4));
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String time = doc.select("#info > p").get(2).text().substring(5);
         long ts = simpleDateFormat.parse(time).getTime();
@@ -129,6 +129,11 @@ public class Sourcebiqu6 extends BaseResolve {
     @Override
     public String getAddress(String addr, NovelInfo novelInfo) {
         return addr;
+    }
+
+    @Override
+    public boolean isPC() {
+        return true;
     }
 
     @Override

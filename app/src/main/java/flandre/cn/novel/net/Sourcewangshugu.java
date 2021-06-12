@@ -41,7 +41,7 @@ public class Sourcewangshugu extends BaseResolve {
     @Override
     public void searchData(Document document, NovelInfo novelInfo) {
         novelInfo.setName(document.select("#content > dd:nth-child(2) > h1").get(0).text().split(" ")[0]);
-        novelInfo.setAuthor(document.select("#at > tbody > tr:nth-child(1) > td:nth-child(4)").get(0).text().substring(1));
+        novelInfo.setAuthor(document.select("#at > tbody > tr:nth-child(1) > td:nth-child(4)").get(0).text());
         novelInfo.setComplete(document.select("#at > tbody > tr:nth-child(1) > td:nth-child(6)").get(0).text().contains("连载") ? 0 : 1);
         novelInfo.setIntroduce(document.select("#content > dd:nth-child(7) > p:nth-child(3)").get(0).text());
         novelInfo.setUrl(document.select("#content > dd:nth-child(3) > div:nth-child(2) > p.btnlinks > a.read").attr("href"));
@@ -131,6 +131,11 @@ public class Sourcewangshugu extends BaseResolve {
         addr = addr.substring(0, addr.length() - 1);
         addr = addr.substring(0, addr.lastIndexOf("/")) + "/book" + num + ".html";
         return addr;
+    }
+
+    @Override
+    public boolean isPC() {
+        return true;
     }
 
     @Override

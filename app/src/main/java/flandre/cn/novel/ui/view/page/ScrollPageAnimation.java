@@ -144,7 +144,7 @@ public class ScrollPageAnimation extends NormalPageAnimation implements Runnable
 
     private void auto() {
         preY = 0;
-        scroller.fling(0, 0, 0, velocityY, 0, 0, -1000, 1000);  // 使用摩擦滑动
+        scroller.fling(0, 0, 0, velocityY, 0, 0, -5000, 5000);  // 使用摩擦滑动
         startScroll();
     }
 

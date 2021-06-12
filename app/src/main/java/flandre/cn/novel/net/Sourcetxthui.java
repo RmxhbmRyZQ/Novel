@@ -22,6 +22,11 @@ public class Sourcetxthui extends BaseResolve {
     public static String TAG = "https://www.txthui.com/";
 
     @Override
+    public boolean isPC() {
+        return true;
+    }
+
+    @Override
     public String getDomain() {
         return TAG;
     }
@@ -59,7 +64,7 @@ public class Sourcetxthui extends BaseResolve {
 
         String imgUrl = getDomain() + doc.select("#fmimg > img").attr("src").substring(1);
         novelInfo.setName(doc.select("#info > h1").get(0).text());
-        novelInfo.setAuthor(doc.select("#info > p").get(0).text().substring(7));
+        novelInfo.setAuthor(doc.select("#info > p").get(0).text().substring(4));
         novelInfo.setComplete(doc.select("#fmimg > span.a").size() > 0 ? 1 : 0);
         novelInfo.setChapter(doc.select("#info > p").get(3).select("a").get(0).text());
         String s = withBr(doc, "#intro", "", DOUBLE_LE_RF);

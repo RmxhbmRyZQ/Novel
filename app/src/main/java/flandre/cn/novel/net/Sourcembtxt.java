@@ -141,6 +141,11 @@ public class Sourcembtxt extends BaseResolve {
     }
 
     @Override
+    public boolean isPC() {
+        return true;
+    }
+
+    @Override
     public String getDomain() {
         return TAG;
     }

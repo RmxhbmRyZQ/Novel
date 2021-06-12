@@ -20,6 +20,11 @@ public class Sourcefhxiaoshuo extends BaseResolve {
     public static String TAG = "https://www.ciyuxs.com/";
 
     @Override
+    public boolean isPC() {
+        return true;
+    }
+
+    @Override
     public String getDomain() {
         return TAG;
     }
@@ -63,7 +68,7 @@ public class Sourcefhxiaoshuo extends BaseResolve {
         String imgUrl = doc.select("#fmimg > img").get(0).attr("src");
 
         novelInfo.setName(doc.select("#info > h1").get(0).text());
-        novelInfo.setAuthor(doc.select("#info > p").get(0).text().substring(7));
+        novelInfo.setAuthor(doc.select("#info > p").get(0).text().substring(4));
         novelInfo.setChapter(doc.select("#info > font > p > a").get(0).text());
         String introduce = doc.select("#intro > .introtxt").get(0).text().substring(5);
         novelInfo.setIntroduce(introduce.equals("") ? "没有简介" : introduce);

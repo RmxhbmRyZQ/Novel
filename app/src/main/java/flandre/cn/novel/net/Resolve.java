@@ -10,6 +10,8 @@ import java.text.ParseException;
 import java.util.List;
 
 public interface Resolve {
+    public boolean isPC();
+
     public String getDomain();
 
     public String getCharset();

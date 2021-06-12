@@ -21,6 +21,11 @@ public class Sourcelinovelib extends BaseResolve {
     public static String TAG = "https://w.linovelib.com/";
 
     @Override
+    public boolean isPC() {
+        return false;
+    }
+
+    @Override
     public String getDomain() {
         return TAG;
     }
@@ -37,7 +42,7 @@ public class Sourcelinovelib extends BaseResolve {
 
     @Override
     public Observable<ResponseBody> getSearchObservable(String s) {
-        return crawler.crawlerPOST(getDomain() + "s/", "searchkey=" + setUnicode(s) + "&searchtype=all");
+        return crawler.crawlerGET(getDomain() + "s/?searchkey=" + s + "&searchtype=all");
     }
 
     @Override
@@ -127,11 +132,12 @@ public class Sourcelinovelib extends BaseResolve {
             return novelText;
         }
         String text = withBr(document, "#acontent", " ", DOUBLE_LE_RF);
-        if (text.endsWith("（继续下一页）" + DOUBLE_LE_RF + DOUBLE_LE_RF)) {
+        if (document.select("#footlink > a").get(3).text().equals("下一页")){
+//        if (text.endsWith("（继续下一页）" + DOUBLE_LE_RF + DOUBLE_LE_RF)) {
             String url = getDomain() + document.select("#footlink > a").get(3).attr("href").substring(1);
             TmpService tmpService = NovelCrawler.getRetrofit().create(TmpService.class);
             ResponseBody body = tmpService.get(url).execute().body();
-            text = text.substring(0, text.length() - 6 - DOUBLE_LE_RF.length() * 4);
+//            text = text.substring(0, text.length() - 6 - DOUBLE_LE_RF.length() * 4);
             text += text(NovelCrawler.getDocument(body, url, this)).getText();
         } else
             text = text.substring(0, text.length() - DOUBLE_LE_RF.length() * 2);

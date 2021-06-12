@@ -35,6 +35,8 @@ import static java.lang.Math.min;
  * 2019.12.8
  */
 public class NovelCrawler implements Crawler {
+    private static final String PC = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36";
+    private static final String PE = "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1";
 
     private Resolve resolve;
     private static Retrofit retrofit;
@@ -370,9 +372,9 @@ public class NovelCrawler implements Crawler {
      * @return Document
      */
     @Override
-    public Observable<ResponseBody> crawlerPOST(final String Url, String data) {
+    public Observable<ResponseBody> crawlerPOST(String Url, String data) {
         NovelService textService = retrofit.create(NovelService.class);
-        return textService.post(Url, data, resolve.getDomain(), resolve.getDomain());
+        return textService.post(Url, data, resolve.getDomain(), resolve.getDomain(), resolve.isPC() ? PC : PE);
     }
 
     /**
@@ -381,9 +383,9 @@ public class NovelCrawler implements Crawler {
      * @return Document
      */
     @Override
-    public Observable<ResponseBody> crawlerGET(final String Url) {
+    public Observable<ResponseBody> crawlerGET(String Url) {
         NovelService textService = retrofit.create(NovelService.class);
-        return textService.get(Url, resolve.getDomain(), resolve.getDomain());
+        return textService.get(Url, resolve.getDomain(), resolve.getDomain(), resolve.isPC() ? PC : PE);
     }
 
     @Override

@@ -27,7 +27,7 @@ public interface Crawler {
 
     public int TIMEOUT = 10 * 1000;
 
-    public Observable<ResponseBody> crawlerPOST(final String Url, String data);
+    public  Observable<ResponseBody> crawlerPOST(final String Url, String data);
 
     public Observable<ResponseBody> crawlerGET(final String Url);
 

@@ -156,6 +156,11 @@ public class Sourceymoxuan extends BaseResolve {
     }
 
     @Override
+    public boolean isPC() {
+        return true;
+    }
+
+    @Override
     public String getDomain() {
         return TAG;
     }

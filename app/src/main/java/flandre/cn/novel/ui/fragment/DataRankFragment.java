@@ -113,7 +113,7 @@ public class DataRankFragment extends AttachFragment {
             public void onFail(Throwable e) {
                 adapter.setNewData(null);
                 io_error.setVisibility(View.VISIBLE);
-                loading_wrap.setVerticalGravity(View.GONE);
+                loading_wrap.setVisibility(View.GONE);
                 refresh.setRefreshing(false);
                 e.printStackTrace();
             }

@@ -15,7 +15,7 @@ import java.util.List;
  * 滚动动画
  * 2020.6.24
  */
-public class ScrollPageAnimation extends NormalPageAnimation implements Runnable{
+public class ScrollPageAnimation extends NormalPageAnimation implements Runnable {
     private static final int SEPARATOR = 10;
     private static final int MOVE_PAGE_SEPARATOR = 1;
 
@@ -32,6 +32,7 @@ public class ScrollPageAnimation extends NormalPageAnimation implements Runnable
     private int velocityY = 0;
     private Scroller scroller;
     private int preY;
+    private long time;
 
     public int getOffset() {
         return offset;
@@ -98,6 +99,7 @@ public class ScrollPageAnimation extends NormalPageAnimation implements Runnable
                 x = (int) event.getX();
                 y = (int) event.getY();
                 yp = (int) event.getY();
+                time = System.currentTimeMillis();
                 break;
             case MotionEvent.ACTION_MOVE:
                 // 处理滚动
@@ -109,16 +111,22 @@ public class ScrollPageAnimation extends NormalPageAnimation implements Runnable
                 break;
             case MotionEvent.ACTION_UP:
                 int r = (int) (event.getY() - this.y);
+                long now = System.currentTimeMillis();
                 // 先处理点击事件
-                if (Math.abs(r) < height / 20 && Math.abs(x - event.getX()) < width / 20) {
-                    if (this.y > height / 2 + height / 10)
-                        nextPage();
-                    else if (this.y < height / 2 - height / 10)
-                        if (mPageView.alwaysNext) nextPage();
-                        else lastPage();
-                    else mPageView.getPageTurn().onShowAction();
+                if (this.y < height / 2 + height / 10 && this.y > height / 2 - height / 10
+                        && Math.abs(r) < height / 20 && now - time < 300) {
+                    mPageView.getPageTurn().onShowAction();
                     return true;
                 }
+//                if (Math.abs(r) < height / 20 && Math.abs(x - event.getX()) < width / 20) {
+//                    if (this.y > height / 2 + height / 10)
+//                        nextPage();
+//                    else if (this.y < height / 2 - height / 10)
+//                        if (mPageView.alwaysNext) nextPage();
+//                        else lastPage();
+//                    else mPageView.getPageTurn().onShowAction();
+//                    return true;
+//                }
                 // 不是点击事件时自动滚动
                 auto();
                 break;
@@ -242,6 +250,8 @@ public class ScrollPageAnimation extends NormalPageAnimation implements Runnable
         // 写当前页的内容
         String text = drawText[position].getText();
         List<String> strings = textPosition.get(now);
+        // nowPos 居然会出现 -1？懒得看哪里出问题，直接纠正
+        if (nowPos < 0) nowPos = 0;
         for (int j = nowPos + 1; j <= mPageView.pageCount; j++) {
             // 当当前行没有文字时，空转完这一页
             if (j > strings.size()) {
@@ -272,38 +282,48 @@ public class ScrollPageAnimation extends NormalPageAnimation implements Runnable
 
     @Override
     public void nextPage() {
-        for (int i = 1; i <= mPageView.pageCount / MOVE_PAGE_SEPARATOR; i++) {
-            mPageView.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    pos++;
-                    scroll(-mPageView.getRowHeight() * MOVE_PAGE_SEPARATOR);
-                    drawScroll(mCanvas);
-                    mPageView.postInvalidate();
-                    if (pos == mPageView.pageCount / MOVE_PAGE_SEPARATOR) {
-                        mPageView.next();
-                    }
-                }
-            }, i * SEPARATOR);
-        }
+//        for (int i = 1; i <= mPageView.pageCount / MOVE_PAGE_SEPARATOR; i++) {
+//            mPageView.postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    pos++;
+//                    scroll(-mPageView.getRowHeight() * MOVE_PAGE_SEPARATOR);
+//                    drawScroll(mCanvas);
+//                    mPageView.postInvalidate();
+//                    if (pos == mPageView.pageCount / MOVE_PAGE_SEPARATOR) {
+//                        mPageView.next();
+//                    }
+//                }
+//            }, i * SEPARATOR);
+//        }
+        int move = mPageView.getRowHeight() * mPageView.pageCount;
+        scroll(-move);
+        drawScroll(mCanvas);
+        mPageView.postInvalidate();
+//        mPageView.next();
     }
 
     @Override
     public void lastPage() {
-        for (int i = 1; i <= mPageView.pageCount / MOVE_PAGE_SEPARATOR; i++) {
-            mPageView.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    pos++;
-                    scroll(mPageView.getRowHeight() * MOVE_PAGE_SEPARATOR);
-                    drawScroll(mCanvas);
-                    mPageView.postInvalidate();
-                    if (pos == mPageView.pageCount / MOVE_PAGE_SEPARATOR) {
-                        mPageView.last();
-                    }
-                }
-            }, i * SEPARATOR);
-        }
+//        for (int i = 1; i <= mPageView.pageCount / MOVE_PAGE_SEPARATOR; i++) {
+//            mPageView.postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    pos++;
+//                    scroll(mPageView.getRowHeight() * MOVE_PAGE_SEPARATOR);
+//                    drawScroll(mCanvas);
+//                    mPageView.postInvalidate();
+//                    if (pos == mPageView.pageCount / MOVE_PAGE_SEPARATOR) {
+//                        mPageView.last();
+//                    }
+//                }
+//            }, i * SEPARATOR);
+//        }
+        int move = mPageView.getRowHeight() * mPageView.pageCount;
+        scroll(move);
+        drawScroll(mCanvas);
+        mPageView.postInvalidate();
+//        mPageView.last();
     }
 
     @Override

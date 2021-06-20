@@ -101,6 +101,15 @@ public class PageView extends View {
         marginLeft = DisplayUtil.dip2px(mContext, 10);
     }
 
+    public int getMarginTop() {
+        return marginTop;
+    }
+
+    @Override
+    public int getPaddingTop() {
+        return paddingTop;
+    }
+
     @Override
     public int getPaddingRight() {
         return paddingRight;

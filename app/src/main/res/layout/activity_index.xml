@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout
+<androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawer"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -11,7 +11,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        <android.support.v7.widget.Toolbar
+        <androidx.appcompat.widget.Toolbar
                 android:id="@+id/tool"
                 android:fitsSystemWindows="true"
                 android:layout_width="match_parent"
@@ -28,16 +28,16 @@
                     android:textSize="20sp"
                     android:textStyle="bold"/>
 
-        </android.support.v7.widget.Toolbar>
+        </androidx.appcompat.widget.Toolbar>
 
-        <android.support.v4.view.ViewPager
+        <androidx.viewpager.widget.ViewPager
                 android:id="@+id/pager"
                 android:layout_below="@id/tool"
                 android:layout_above="@id/tab"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-        </android.support.v4.view.ViewPager>
+        </androidx.viewpager.widget.ViewPager>
 
         <!--本来想用GridLayout的但是好像低API没有weight-->
         <LinearLayout
@@ -140,4 +140,4 @@
 
     </LinearLayout>
 
-</android.support.v4.widget.DrawerLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

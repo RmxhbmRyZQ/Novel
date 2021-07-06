@@ -7,13 +7,13 @@
         android:layout_height="match_parent"
         tools:context=".ui.activity.BookManageActivity">
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
             android:layout_above="@id/bottom"
             android:id="@+id/data"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-    </android.support.v7.widget.RecyclerView>
+    </androidx.recyclerview.widget.RecyclerView>
 
     <LinearLayout
             android:id="@+id/bottom"

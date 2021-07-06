@@ -6,12 +6,12 @@
         android:layout_height="match_parent"
         tools:context=".ui.activity.ConfigureSourceActivity">
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rec"
             android:layout_below="@+id/tool"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-    </android.support.v7.widget.RecyclerView>
+    </androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>

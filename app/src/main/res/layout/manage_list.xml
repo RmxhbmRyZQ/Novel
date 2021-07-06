@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"/>
     </LinearLayout>
 
-    <flandre.cn.novel.ui.view.CheckBoxView
+    <novel.flandre.cn.ui.view.CheckBoxView
             android:id="@+id/check"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="10dp"

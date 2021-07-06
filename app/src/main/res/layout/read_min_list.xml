@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1">
 
-            <flandre.cn.novel.ui.view.MultiPaintTextView
+            <novel.flandre.cn.ui.view.MultiPaintTextView
                     android:id="@+id/top_intro"
                     android:paddingBottom="6dp"
                     android:layout_width="wrap_content"
@@ -44,7 +44,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                <flandre.cn.novel.ui.view.CircularProgressView
+                <novel.flandre.cn.ui.view.CircularProgressView
                         android:id="@+id/progress"
                         app:backWidth="3dp"
                         app:progWidth="3dp"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
-          package="flandre.cn.novel">
+          package="novel.flandre.cn">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
@@ -22,15 +22,15 @@
             android:resizeableActivity="true"
             android:supportsPictureInPicture="true">
 
-        <receiver android:name=".service.PlayMusicService$MediaButtonReceiver">
+        <receiver android:name="novel.flandre.cn.service.PlayMusicService$MediaButtonReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.MEDIA_BUTTON"/>
             </intent-filter>
         </receiver>
 
         <provider
-                android:name="android.support.v4.content.FileProvider"
-                android:authorities="flandre.cn.novel.fileProvider"
+                android:name="androidx.core.content.FileProvider"
+                android:authorities="novel.flandre.cn.fileProvider"
                 android:exported="false"
                 android:grantUriPermissions="true">
             <meta-data
@@ -39,7 +39,7 @@
         </provider>
 
         <activity
-                android:name=".ui.activity.MainActivity"
+                android:name="novel.flandre.cn.ui.activity.MainActivity"
                 android:theme="@style/MainTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -47,79 +47,79 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="androidx.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <data android:mimeType="text/plain"/>
             </intent-filter>
         </activity>
         <activity
-                android:name=".ui.activity.IndexActivity"
+                android:name="novel.flandre.cn.ui.activity.IndexActivity"
                 android:theme="@style/AppTheme">
-                <!--android:launchMode="singleTask">-->
+            <!--android:launchMode="singleTask">-->
         </activity>
-        <activity android:name=".ui.activity.SearchActivity">
+        <activity android:name="novel.flandre.cn.ui.activity.SearchActivity">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value=".ui.activity.IndexActivity"/>
+                    android:value="novel.flandre.cn.ui.activity.IndexActivity"/>
         </activity>
         <activity
-                android:name=".ui.activity.NovelDetailActivity"
+                android:name="novel.flandre.cn.ui.activity.NovelDetailActivity"
                 android:label="书籍详细">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value=".ui.activity.SearchActivity"/>
+                    android:value="novel.flandre.cn.ui.activity.SearchActivity"/>
         </activity>
         <activity
-                android:name=".ui.activity.TextActivity"
+                android:name="novel.flandre.cn.ui.activity.TextActivity"
                 android:theme="@style/AppTheme"
                 android:launchMode="singleTop">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value=".ui.activity.IndexActivity"/>
+                    android:value="novel.flandre.cn.ui.activity.IndexActivity"/>
         </activity>
         <activity
-                android:name=".ui.activity.ConfigureThemeActivity"
+                android:name="novel.flandre.cn.ui.activity.ConfigureThemeActivity"
                 android:label="设置">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value=".ui.activity.IndexActivity"/>
+                    android:value="novel.flandre.cn.ui.activity.IndexActivity"/>
         </activity>
-        <activity android:name=".ui.activity.ConfigureSourceActivity">
+        <activity android:name="novel.flandre.cn.ui.activity.ConfigureSourceActivity">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value=".ui.activity.IndexActivity"/>
+                    android:value="novel.flandre.cn.ui.activity.IndexActivity"/>
         </activity>
-        <activity android:name=".ui.activity.ReadTimeActivity">
+        <activity android:name="novel.flandre.cn.ui.activity.ReadTimeActivity">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value=".ui.activity.IndexActivity"/>
+                    android:value="novel.flandre.cn.ui.activity.IndexActivity"/>
         </activity>
-        <activity android:name=".ui.activity.BookManageActivity">
+        <activity android:name="novel.flandre.cn.ui.activity.BookManageActivity">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value=".ui.activity.IndexActivity"/>
+                    android:value="novel.flandre.cn.ui.activity.IndexActivity"/>
         </activity>
 
         <service
-                android:name=".service.NovelService"
+                android:name="novel.flandre.cn.service.NovelService"
                 android:permission="android.permission.INTERNET">
         </service>
         <service
-                android:name=".service.PlayMusicService"
+                android:name="novel.flandre.cn.service.PlayMusicService"
                 android:process=":music"
                 >
         </service>
 
-        <activity android:name=".ui.activity.DownloadManagerActivity">
+        <activity android:name="novel.flandre.cn.ui.activity.DownloadManagerActivity">
         </activity>
         <activity
-                android:name=".ui.activity.LocalMusicActivity"
-                android:parentActivityName=".ui.activity.IndexActivity"
+                android:name="novel.flandre.cn.ui.activity.LocalMusicActivity"
+                android:parentActivityName="novel.flandre.cn.ui.activity.IndexActivity"
                 android:launchMode="singleTop">
             <!--android:launchMode="singleTask">-->
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value=".ui.activity.IndexActivity"/>
+                    android:value="novel.flandre.cn.ui.activity.IndexActivity"/>
         </activity>
     </application>
 
